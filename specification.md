@@ -1,6 +1,6 @@
 A GTFS file is a ZIP archive containing a number of CSV files. A difference can concern a file, a column in a file or a row in a file.
 
-A “GTFS Diff” file is a CSV file with 7 columns, allowing to express any difference found between two GTFS files. Each row describes a difference found.
+A “GTFS Diff” file is a CSV file with 8 columns, allowing to express any difference found between two GTFS files. Each row describes a difference found.
 
 ## Columns description
 
