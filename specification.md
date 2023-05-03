@@ -27,7 +27,7 @@ This order makes it easier for a human to grasp the differences between files, a
 
 For each given type of target, the row order is not specified.
 
-### Example 1
+### Example
 Here is an example GTFS diff file, with some explanations in the note column about what each row means.
 
 |id|file|action|target|identifier|initial\_value|new\_value|note|
@@ -40,8 +40,11 @@ Here is an example GTFS diff file, with some explanations in the note column abo
 |6 |stops.txt|update|row|{“stop\_id”: “B”}|{“stop\_name”: “”}|{“stop\_name”: “station”}|<p>in stops.txt update the stop\_name of the row identified by “stop\_id” = “B”. The stop\_name was empty, now it is “station”</p><p></p>|
 |7|calendar\_dates.txt|update|row|{“service\_id”: “1”, “date”: “*20220928”*}|{“exception\_type”: “1”}|{“exception\_type”: “2”}|in calendar\_dates.txt, update the exception\_type of the row identified by “service\_id” = “1” AND “date” = “*20220928”*. The exception\_type was 1, now it is 2.|
 
-### Example 2
+### Example
 If you shuffle the rows of the stops.txt file in a GTFS archive, the resulting GTFS Diff is empty, as row order is not a relevant information in a GTFS file.
+
+### Full example
+The [examples](/examples/) folder contains simple GTFS files and the resulting GTFS Diff listing the differences between them.
 
 ## Possible usages
 - Have a quick overview of the changes made to a GTFS file
