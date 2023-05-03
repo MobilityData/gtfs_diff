@@ -1,4 +1,4 @@
-# GTFS Diff : specification to list differences between GTFS files
+# GTFS Diff : A specification to list differences between GTFS files
 
 ## Goal
 GTFS Diff aims at providing a universal and unified way to list differences between two GTFS files. It is designed to be easily understandable by humans, but also easily produced and processed by computers.
