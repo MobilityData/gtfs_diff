@@ -18,3 +18,9 @@ It is also hard for reusers to review the changes made to a given GTFS file by i
 - the [GTFS Diff specification](specification.md)
 - [Online tool](https://transport.data.gouv.fr/tools/gtfs_diff) to generate a GTFS Diff on transport.data.gouv.fr
 - [Source code](https://github.com/etalab/transport-site/blob/b6bdd7749192e52bccb9ecbb33e436b56c9fd693/apps/transport/lib/transport/gtfs_diff.ex) of the implementation (in Elixir)
+
+## Acknowledgements
+
+This project was initially created by the [French National Access Point](https://transport.data.gouv.fr/) to ease communication between data producers and reusers and to monitor changes made by data producers over time in their GTFS feeds.
+
+In June 2023, MobilityData and the French NAP announced a partnership to maintain and further improve the GTFS Diff specification.
