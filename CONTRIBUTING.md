@@ -28,7 +28,7 @@ To open a Pull Request, please do the following:
 - Create a new branch
 - Propose your changes by opening a [new pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
 
-## Roles and Responsibilities
+## Review process
 Every new contribution will be reviewed by [MobilityData](https://mobilitydata.org/) and the [French National Access Point](https://transport.data.gouv.fr/).
 
 Before accepting a contribution, the following criteria will be evaluated:
