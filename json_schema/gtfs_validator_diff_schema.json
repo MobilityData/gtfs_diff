@@ -1,0 +1,368 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "summary": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "validator_version": {
+              "type": "object",
+              "properties": {
+                "old_validator_version": {
+                  "type": "string"
+                },
+                "new_validator_version": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "old_validator_version",
+                "new_validator_version"
+              ]
+            },
+            "service_window": {
+              "type": "object",
+              "properties": {
+                "old_service_window": {
+                  "type": "object",
+                  "properties": {
+                    "start_date": {
+                      "type": "string"
+                    },
+                    "end_date": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "start_date",
+                    "end_date"
+                  ]
+                },
+                "new_service_window": {
+                  "type": "object",
+                  "properties": {
+                    "start_date": {
+                      "type": "string"
+                    },
+                    "end_date": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "start_date",
+                    "end_date"
+                  ]
+                }
+              },
+              "required": [
+                "old_service_window",
+                "new_service_window"
+              ]
+            },
+            "counts": {
+              "type": "object",
+              "properties": {
+                "agencies": {
+                  "type": "object",
+                  "properties": {
+                    "diff": {
+                      "type": "number"
+                    },
+                    "old_count": {
+                      "type": "number"
+                    },
+                    "new_count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "diff",
+                    "old_count",
+                    "new_count"
+                  ]
+                },
+                "blocks": {
+                  "type": "object",
+                  "properties": {
+                    "diff": {
+                      "type": "number"
+                    },
+                    "old_count": {
+                      "type": "number"
+                    },
+                    "new_count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "diff",
+                    "old_count",
+                    "new_count"
+                  ]
+                },
+                "routes": {
+                  "type": "object",
+                  "properties": {
+                    "diff": {
+                      "type": "number"
+                    },
+                    "old_count": {
+                      "type": "number"
+                    },
+                    "new_count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "diff",
+                    "old_count",
+                    "new_count"
+                  ]
+                },
+                "shapes": {
+                  "type": "object",
+                  "properties": {
+                    "diff": {
+                      "type": "number"
+                    },
+                    "old_count": {
+                      "type": "number"
+                    },
+                    "new_count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "diff",
+                    "old_count",
+                    "new_count"
+                  ]
+                },
+                "stops": {
+                  "type": "object",
+                  "properties": {
+                    "diff": {
+                      "type": "number"
+                    },
+                    "old_count": {
+                      "type": "number"
+                    },
+                    "new_count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "diff",
+                    "old_count",
+                    "new_count"
+                  ]
+                },
+                "trips": {
+                  "type": "object",
+                  "properties": {
+                    "diff": {
+                      "type": "number"
+                    },
+                    "old_count": {
+                      "type": "number"
+                    },
+                    "new_count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "diff",
+                    "old_count",
+                    "new_count"
+                  ]
+                }
+              },
+              "required": [
+                "agencies",
+                "blocks",
+                "routes",
+                "shapes",
+                "stops",
+                "trips"
+              ]
+            },
+            "features": {
+              "type": "object",
+              "properties": {
+                "added": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "removed": {
+                  "type": "array",
+                  "items": {}
+                }
+              },
+              "required": [
+                "added",
+                "removed"
+              ]
+            }
+          },
+          "required": [
+            "validator_version",
+            "service_window",
+            "counts",
+            "features"
+          ]
+        },
+        "compliance": {
+          "type": "object",
+          "properties": {
+            "totalNotices": {
+              "type": "object",
+              "properties": {
+                "diff": {
+                  "type": "number"
+                },
+                "old_count": {
+                  "type": "number"
+                },
+                "new_count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "diff",
+                "old_count",
+                "new_count"
+              ]
+            },
+            "uniqueNotices": {
+              "type": "object",
+              "properties": {
+                "diff": {
+                  "type": "number"
+                },
+                "old_count": {
+                  "type": "number"
+                },
+                "new_count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "diff",
+                "old_count",
+                "new_count"
+              ]
+            },
+            "uniqueErrorNotices": {
+              "type": "object",
+              "properties": {
+                "diff": {
+                  "type": "number"
+                },
+                "old_count": {
+                  "type": "number"
+                },
+                "new_count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "diff",
+                "old_count",
+                "new_count"
+              ]
+            },
+            "uniqueWarningNotices": {
+              "type": "object",
+              "properties": {
+                "diff": {
+                  "type": "number"
+                },
+                "old_count": {
+                  "type": "number"
+                },
+                "new_count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "diff",
+                "old_count",
+                "new_count"
+              ]
+            },
+            "uniqueInfoNotices": {
+              "type": "object",
+              "properties": {
+                "diff": {
+                  "type": "number"
+                },
+                "old_count": {
+                  "type": "number"
+                },
+                "new_count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "diff",
+                "old_count",
+                "new_count"
+              ]
+            }
+          },
+          "required": [
+            "totalNotices",
+            "uniqueNotices",
+            "uniqueErrorNotices",
+            "uniqueWarningNotices",
+            "uniqueInfoNotices"
+          ]
+        }
+      },
+      "required": [
+        "metadata",
+        "compliance"
+      ]
+    },
+    "notices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          },
+          "totalNotices": {
+            "type": "number"
+          },
+          "sampleNotices": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": ["string", "number"]
+              }
+            }
+          }
+        },
+        "required": [
+          "code",
+          "severity",
+          "totalNotices",
+          "sampleNotices"
+        ]
+      }
+    }
+  },
+  "required": [
+    "summary"
+  ]
+}

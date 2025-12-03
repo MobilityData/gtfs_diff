@@ -1,0 +1,119 @@
+{
+	"summary": {
+        "metadata": {
+            "validator_version": {
+                "old_validator_version": "7.0",
+                "new_validator_version": "7.1"
+            },
+            "service_window": {
+                "old_service_window": {
+                    "start_date": "20240101",
+                    "end_date": "20241231"
+                },
+                "new_service_window": {
+                    "start_date": "20250101",
+                    "end_date": "20251231"
+                }
+            },
+            "counts": {
+                "agencies": {
+                    "diff": 0,
+                    "old_count": 1,
+                    "new_count": 1
+                },
+                "blocks": {
+                    "diff": 0,
+                    "old_count": 5,
+                    "new_count": 5
+                },
+                "routes": {
+                    "diff": 0,
+                    "old_count": 10,
+                    "new_count": 10
+                },
+                "shapes": {
+                    "diff": 1,
+                    "old_count": 8,
+                    "new_count": 9
+                },
+                "stops": {
+                    "diff": 0,
+                    "old_count": 150,
+                    "new_count": 150
+                },
+                "trips": {
+                    "diff": -20,
+                    "old_count": 200,
+                    "new_count": 190
+                }
+            },
+            "features": {
+                "added": ["fares"],
+                "removed": ["location types"]
+            }
+        },
+        "compliance": {
+            "totalNotices": {
+                "diff": -100,
+                "old_count": 200,
+                "new_count": 100
+            },
+            "uniqueNotices": {
+                "diff": -9,
+                "old_count": 10,
+                "new_count": 1
+            },
+            "uniqueErrorNotices": {
+                "diff": -2,
+                "old_count": 3,
+                "new_count": 1
+            },
+            "uniqueWarningNotices": {
+                "diff": -1,
+                "old_count": 1,
+                "new_count": 0
+            },
+            "uniqueInfoNotices": {
+                "diff": 0,
+                "old_count": 0,
+                "new_count": 0
+            }
+        }
+    },
+    "notices": [
+        {
+            "code": "decreasing_or_equal_stop_time_distance",
+            "severity": "ERROR",
+            "totalNotices": 1,
+            "sampleNotices":[
+                {
+                    "tripId": "71436504",
+                    "stopId": "8321",
+                    "csvRowNumber": 576301,
+                    "shapeDistTraveled": 3.365,
+                    "stopSequence": 13,
+                    "prevCsvRowNumber": 576300,
+                    "prevShapeDistTraveled": 3.365,
+                    "prevStopSequence": 12
+                }
+            ]
+        },
+        {
+            "code": "missing_recommended_field",
+            "severity": "WARNING",
+            "totalNotices": 2,
+            "sampleNotices": [
+                {
+                    "filename": "agency.txt",
+                    "csvRowNumber": 2,
+                    "fieldName": "agency_id"
+                },
+                {
+                    "filename": "routes.txt",
+                    "csvRowNumber": 2,
+                    "fieldName": "agency_id"
+                }
+            ]
+        }
+    ]
+}
