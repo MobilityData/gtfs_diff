@@ -1,0 +1,127 @@
+{
+  "metadata": {
+    "schema_version": "2.0.0",
+    "generated_at": "2026-04-08T14:30:00Z",
+    "row_changes_cap_per_file": 50,
+    "base_feed": {
+      "source": "https://example.com/gtfs-2026-03.zip",
+      "downloaded_at": "2026-03-15T10:00:00Z"
+    },
+    "new_feed": {
+      "source": "https://example.com/gtfs-2026-04.zip",
+      "downloaded_at": "2026-04-01T10:00:00Z"
+    },
+    "unsupported_files": [
+      {
+        "file_name": "readme.pdf",
+        "present_in": "base"
+      },
+      {
+        "file_name": "custom_notes.txt",
+        "present_in": "both"
+      }
+    ]
+  },
+
+  "summary": {
+    "total_changes": 1213,
+    "files_added": 1,
+    "files_deleted": 0,
+    "files_modified": 2,
+    "files": [
+      { "file_name": "shapes.txt", "status": "added", "rows_added": 30 },
+      {
+        "file_name": "stop_times.txt",
+        "status": "modified",
+        "rows_added": 120,
+        "rows_deleted": 45,
+        "rows_modified": 1048
+      },
+      {
+        "file_name": "stops.txt",
+        "status": "modified",
+        "columns_deleted": 1,
+        "rows_added": 2,
+        "rows_deleted": 1,
+        "rows_modified": 5
+      }
+    ]
+  },
+  "file_diffs": [
+    {
+      "file_name": "shapes.txt",
+      "file_action": "added",
+      "columns_added": [],
+      "columns_deleted": []
+    },
+    {
+      "file_name": "stop_times.txt",
+      "file_action": "modified",
+      "columns_added": [],
+      "columns_deleted": [],
+      "row_changes": {
+        "primary_key": ["trip_id", "stop_sequence"],
+        "columns": ["trip_id", "arrival_time", "departure_time", "stop_id", "stop_sequence"],
+        "added": [
+          {
+            "identifier": { "trip_id": "T100", "stop_sequence": "1" },
+            "raw_value": "T100,08:00:00,08:00:30,A,1",
+            "new_line_number": 542
+          }
+        ],
+        "deleted": [],
+        "modified": [
+          {
+            "identifier": { "trip_id": "T042", "stop_sequence": "3" },
+            "raw_value": "T042,09:15:00,09:15:30,B,3",
+            "base_line_number": 87,
+            "new_line_number": 88,
+            "field_changes": [
+              { "field": "arrival_time", "base_value": "09:15:00", "new_value": "09:16:00" }
+            ]
+          }
+        ]
+      },
+      "truncated": {
+        "is_truncated": true,
+        "omitted_count": 1163
+      }
+    },
+    {
+      "file_name": "stops.txt",
+      "file_action": "modified",
+      "columns_added": [],
+      "columns_deleted": ["internal_id"],
+      "row_changes": {
+        "primary_key": ["stop_id"],
+        "columns": ["stop_id", "stop_name", "stop_lat", "stop_lon", "zone_id"],
+        "added": [
+          {
+            "identifier": { "stop_id": "C" },
+            "raw_value": "C,Central Park,45.5017,-73.5673,1",
+            "new_line_number": 15
+          }
+        ],
+        "deleted": [
+          {
+            "identifier": { "stop_id": "A" },
+            "raw_value": "A,Town center,45.5000,-73.5500,1",
+            "base_line_number": 2
+          }
+        ],
+        "modified": [
+          {
+            "identifier": { "stop_id": "B" },
+            "raw_value": "B,,45.4900,-73.5600,1",
+            "base_line_number": 3,
+            "new_line_number": 3,
+            "field_changes": [
+              { "field": "stop_name", "base_value": "", "new_value": "Train station" },
+              { "field": "stop_lat", "base_value": "45.4900", "new_value": "45.4912" }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
