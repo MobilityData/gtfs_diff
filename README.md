@@ -24,7 +24,7 @@ It is also hard for reusers to review the changes made to a given GTFS file by i
 See the [specification index](specification.md) for guidance on choosing a version.
 
 ## Resources
-- [Online tool](https://transport.data.gouv.fr/tools/gtfs_diff) to generate a GTFS Diff on transport.data.gouv.fr
+- [Online tool](https://transport.data.gouv.fr/tools/gtfs_diff) to generate a GTFS Diff on transport.data.gouv.fr (uses the v1 format)
 - [Source code](https://github.com/etalab/transport-site/blob/b6bdd7749192e52bccb9ecbb33e436b56c9fd693/apps/transport/lib/transport/gtfs_diff.ex) of the implementation (in Elixir)
 
 ## Acknowledgements
