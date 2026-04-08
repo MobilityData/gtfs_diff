@@ -44,7 +44,7 @@ Here is an example GTFS diff file, with some explanations in the note column abo
 If you shuffle the rows of the stops.txt file in a GTFS archive, the resulting GTFS Diff is empty, as row order is not a relevant information in a GTFS file.
 
 ### Full example
-The [examples](/examples/) folder contains simple GTFS files and the resulting GTFS Diff listing the differences between them.
+The [examples](examples/) folder contains simple GTFS files and the resulting GTFS Diff listing the differences between them.
 
 ## Possible usages
 - Have a quick overview of the changes made to a GTFS file
