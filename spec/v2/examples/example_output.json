@@ -25,25 +25,25 @@
 
   "summary": {
     "total_changes": 1213,
-    "files_added": 1,
-    "files_deleted": 0,
-    "files_modified": 2,
+    "files_added_count": 1,
+    "files_deleted_count": 0,
+    "files_modified_count": 2,
     "files": [
-      { "file_name": "shapes.txt", "status": "added", "rows_added": 30 },
+      { "file_name": "shapes.txt", "status": "added", "rows_added_count": 30 },
       {
         "file_name": "stop_times.txt",
         "status": "modified",
-        "rows_added": 120,
-        "rows_deleted": 45,
-        "rows_modified": 1048
+        "rows_added_count": 120,
+        "rows_deleted_count": 45,
+        "rows_modified_count": 1048
       },
       {
         "file_name": "stops.txt",
         "status": "modified",
-        "columns_deleted": 1,
-        "rows_added": 2,
-        "rows_deleted": 1,
-        "rows_modified": 5
+        "columns_deleted_count": 1,
+        "rows_added_count": 2,
+        "rows_deleted_count": 1,
+        "rows_modified_count": 5
       }
     ]
   },
@@ -51,26 +51,26 @@
     {
       "file_name": "shapes.txt",
       "file_action": "added",
-      "columns_added": [],
-      "columns_deleted": []
+      "columns_added_list": [],
+      "columns_deleted_list": []
     },
     {
       "file_name": "stop_times.txt",
       "file_action": "modified",
-      "columns_added": [],
-      "columns_deleted": [],
+      "columns_added_list": [],
+      "columns_deleted_list": [],
       "row_changes": {
         "primary_key": ["trip_id", "stop_sequence"],
-        "columns": ["trip_id", "arrival_time", "departure_time", "stop_id", "stop_sequence"],
-        "added": [
+        "columns_list": ["trip_id", "arrival_time", "departure_time", "stop_id", "stop_sequence"],
+        "added_list": [
           {
             "identifier": { "trip_id": "T100", "stop_sequence": "1" },
             "raw_value": "T100,08:00:00,08:00:30,A,1",
             "new_line_number": 542
           }
         ],
-        "deleted": [],
-        "modified": [
+        "deleted_list": [],
+        "modified_list": [
           {
             "identifier": { "trip_id": "T042", "stop_sequence": "3" },
             "raw_value": "T042,09:15:00,09:15:30,B,3",
@@ -90,26 +90,26 @@
     {
       "file_name": "stops.txt",
       "file_action": "modified",
-      "columns_added": [],
-      "columns_deleted": ["internal_id"],
+      "columns_added_list": [],
+      "columns_deleted_list": ["internal_id"],
       "row_changes": {
         "primary_key": ["stop_id"],
-        "columns": ["stop_id", "stop_name", "stop_lat", "stop_lon", "zone_id"],
-        "added": [
+        "columns_list": ["stop_id", "stop_name", "stop_lat", "stop_lon", "zone_id"],
+        "added_list": [
           {
             "identifier": { "stop_id": "C" },
             "raw_value": "C,Central Park,45.5017,-73.5673,1",
             "new_line_number": 15
           }
         ],
-        "deleted": [
+        "deleted_list": [
           {
             "identifier": { "stop_id": "A" },
             "raw_value": "A,Town center,45.5000,-73.5500,1",
             "base_line_number": 2
           }
         ],
-        "modified": [
+        "modified_list": [
           {
             "identifier": { "stop_id": "B" },
             "raw_value": "B,,45.4900,-73.5600,1",
