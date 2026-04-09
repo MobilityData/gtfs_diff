@@ -4,7 +4,7 @@
 GTFS Diff aims at providing a universal and unified way to list differences between two GTFS files. It is designed to be easily understandable by humans, but also easily produced and processed by computers.
 
 ## Context
-[transport.data.gouv.fr](transport.data.gouv.fr) is the French National Access Point for mobility data. It is operated by the French Ministry of Transportation. The platform gives access to a variety of mobility data, including a number of GTFS files.
+[transport.data.gouv.fr](https://transport.data.gouv.fr/) is the French National Access Point for mobility data. It is operated by the French Ministry of Transportation. The platform gives access to a variety of mobility data, including a number of GTFS files.
 
 It happens frequently that companies or individuals using this data modify it. For example to correct spelling mistakes in a stop name, add color to routes or wheelchair information.
 
