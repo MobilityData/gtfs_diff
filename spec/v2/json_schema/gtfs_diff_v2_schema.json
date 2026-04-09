@@ -22,9 +22,9 @@
           "description": "ISO 8601 timestamp of when the diff was generated."
         },
         "row_changes_cap_per_file": {
-          "type": "integer",
-          "minimum": 1,
-          "description": "Maximum number of row changes included per file in file_diffs."
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Maximum number of row changes included per file in file_diffs. 0 means no row changes are included; null means no cap is applied."
         },
         "base_feed": { "$ref": "#/$defs/feed_source" },
         "new_feed": { "$ref": "#/$defs/feed_source" },
@@ -51,7 +51,7 @@
     },
     "summary": {
       "type": "object",
-      "required": ["total_changes", "files_added", "files_deleted", "files_modified", "files"],
+      "required": ["total_changes", "files_added_count", "files_deleted_count", "files_modified_count", "files"],
       "additionalProperties": false,
       "properties": {
         "total_changes": {
@@ -59,17 +59,17 @@
           "minimum": 0,
           "description": "Total number of changes across all files."
         },
-        "files_added": {
+        "files_added_count": {
           "type": "integer",
           "minimum": 0,
           "description": "Number of files added."
         },
-        "files_deleted": {
+        "files_deleted_count": {
           "type": "integer",
           "minimum": 0,
           "description": "Number of files deleted."
         },
-        "files_modified": {
+        "files_modified_count": {
           "type": "integer",
           "minimum": 0,
           "description": "Number of files modified."
@@ -116,27 +116,27 @@
           "enum": ["added", "deleted", "modified"],
           "description": "File-level status."
         },
-        "columns_added": {
+        "columns_added_count": {
           "type": "integer",
           "minimum": 0,
           "description": "Number of columns added."
         },
-        "columns_deleted": {
+        "columns_deleted_count": {
           "type": "integer",
           "minimum": 0,
           "description": "Number of columns deleted."
         },
-        "rows_added": {
+        "rows_added_count": {
           "type": "integer",
           "minimum": 0,
           "description": "True count of rows added."
         },
-        "rows_deleted": {
+        "rows_deleted_count": {
           "type": "integer",
           "minimum": 0,
           "description": "True count of rows deleted."
         },
-        "rows_modified": {
+        "rows_modified_count": {
           "type": "integer",
           "minimum": 0,
           "description": "True count of rows modified."
@@ -145,7 +145,7 @@
     },
     "file_diff": {
       "type": "object",
-      "required": ["file_name", "file_action", "columns_added", "columns_deleted"],
+      "required": ["file_name", "file_action", "columns_added_list", "columns_deleted_list"],
       "additionalProperties": false,
       "properties": {
         "file_name": {
@@ -157,19 +157,19 @@
           "enum": ["modified", "added", "deleted"],
           "description": "Action describing how this file changed."
         },
-        "columns_added": {
+        "columns_added_list": {
           "type": "array",
           "items": { "type": "string" },
-          "description": "Column names added to this file."
+          "description": "Column names added to this file. The order preserves the same order as the columns appear in the raw CSV of the new file."
         },
-        "columns_deleted": {
+        "columns_deleted_list": {
           "type": "array",
           "items": { "type": "string" },
-          "description": "Column names deleted from this file."
+          "description": "Column names deleted from this file. The order preserves the same order as the columns appear in the raw CSV of the base file."
         },
         "row_changes": {
           "type": "object",
-          "required": ["primary_key", "columns", "added", "deleted", "modified"],
+          "required": ["primary_key", "columns_list", "added_list", "deleted_list", "modified_list"],
           "additionalProperties": false,
           "properties": {
             "primary_key": {
@@ -178,22 +178,22 @@
               "minItems": 1,
               "description": "Column(s) that uniquely identify a row."
             },
-            "columns": {
+            "columns_list": {
               "type": "array",
               "items": { "type": "string" },
               "description": "Union of all columns across both base and new versions. Order matches the base feed's original column order; columns only in the new feed are appended."
             },
-            "added": {
+            "added_list": {
               "type": "array",
               "items": { "$ref": "#/$defs/row_added" },
               "description": "Added rows (capped)."
             },
-            "deleted": {
+            "deleted_list": {
               "type": "array",
               "items": { "$ref": "#/$defs/row_deleted" },
               "description": "Deleted rows (capped)."
             },
-            "modified": {
+            "modified_list": {
               "type": "array",
               "items": { "$ref": "#/$defs/row_modified" },
               "description": "Modified rows (capped)."
