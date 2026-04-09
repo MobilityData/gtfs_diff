@@ -14,9 +14,17 @@ It also happens that data users share their enhanced GTFS file on our platform. 
 
 It is also hard for reusers to review the changes made to a given GTFS file by its official producer, making it harder to understand the impact of the changes on their systems.
 
+## Specification versions
+
+| Version | Format | Status | Specification |
+|---------|--------|--------|---------------|
+| v1 | CSV | Stable | [spec/v1/specification.md](spec/v1/specification.md) |
+| v2 | JSON | Draft | [spec/v2/specification.md](spec/v2/specification.md) |
+
+See the [specification index](specification.md) for guidance on choosing a version.
+
 ## Resources
-- the [GTFS Diff specification](specification.md)
-- [Online tool](https://transport.data.gouv.fr/tools/gtfs_diff) to generate a GTFS Diff on transport.data.gouv.fr
+- [Online tool](https://transport.data.gouv.fr/tools/gtfs_diff) to generate a GTFS Diff on transport.data.gouv.fr (uses the v1 format)
 - [Source code](https://github.com/etalab/transport-site/blob/b6bdd7749192e52bccb9ecbb33e436b56c9fd693/apps/transport/lib/transport/gtfs_diff.ex) of the implementation (in Elixir)
 
 ## Acknowledgements
