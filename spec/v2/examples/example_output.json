@@ -51,26 +51,26 @@
     {
       "file_name": "shapes.txt",
       "file_action": "added",
-      "columns_added_list": [],
-      "columns_deleted_list": []
+      "columns_added": [],
+      "columns_deleted": []
     },
     {
       "file_name": "stop_times.txt",
       "file_action": "modified",
-      "columns_added_list": [],
-      "columns_deleted_list": [],
+      "columns_added": [],
+      "columns_deleted": [],
       "row_changes": {
         "primary_key": ["trip_id", "stop_sequence"],
-        "columns_list": ["trip_id", "arrival_time", "departure_time", "stop_id", "stop_sequence"],
-        "added_list": [
+        "columns": ["trip_id", "arrival_time", "departure_time", "stop_id", "stop_sequence"],
+        "added": [
           {
             "identifier": { "trip_id": "T100", "stop_sequence": "1" },
             "raw_value": "T100,08:00:00,08:00:30,A,1",
             "new_line_number": 542
           }
         ],
-        "deleted_list": [],
-        "modified_list": [
+        "deleted": [],
+        "modified": [
           {
             "identifier": { "trip_id": "T042", "stop_sequence": "3" },
             "raw_value": "T042,09:15:00,09:15:30,B,3",
@@ -90,26 +90,26 @@
     {
       "file_name": "stops.txt",
       "file_action": "modified",
-      "columns_added_list": [],
-      "columns_deleted_list": ["internal_id"],
+      "columns_added": [],
+      "columns_deleted": [{ "name": "internal_id", "position": 6 }],
       "row_changes": {
         "primary_key": ["stop_id"],
-        "columns_list": ["stop_id", "stop_name", "stop_lat", "stop_lon", "zone_id"],
-        "added_list": [
+        "columns": ["stop_id", "stop_name", "stop_lat", "stop_lon", "zone_id"],
+        "added": [
           {
             "identifier": { "stop_id": "C" },
             "raw_value": "C,Central Park,45.5017,-73.5673,1",
             "new_line_number": 15
           }
         ],
-        "deleted_list": [
+        "deleted": [
           {
             "identifier": { "stop_id": "A" },
             "raw_value": "A,Town center,45.5000,-73.5500,1",
             "base_line_number": 2
           }
         ],
-        "modified_list": [
+        "modified": [
           {
             "identifier": { "stop_id": "B" },
             "raw_value": "B,,45.4900,-73.5600,1",

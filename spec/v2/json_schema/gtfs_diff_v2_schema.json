@@ -86,6 +86,22 @@
     }
   },
   "$defs": {
+    "column_entry": {
+      "type": "object",
+      "required": ["name", "position"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Column name."
+        },
+        "position": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "1-based position of this column in the CSV header row."
+        }
+      }
+    },
     "feed_source": {
       "type": "object",
       "required": ["source", "downloaded_at"],
@@ -145,7 +161,7 @@
     },
     "file_diff": {
       "type": "object",
-      "required": ["file_name", "file_action", "columns_added_list", "columns_deleted_list"],
+      "required": ["file_name", "file_action", "columns_added", "columns_deleted"],
       "additionalProperties": false,
       "properties": {
         "file_name": {
@@ -157,19 +173,19 @@
           "enum": ["modified", "added", "deleted"],
           "description": "Action describing how this file changed."
         },
-        "columns_added_list": {
+        "columns_added": {
           "type": "array",
-          "items": { "type": "string" },
-          "description": "Column names added to this file. The order preserves the same order as the columns appear in the raw CSV of the new file."
+          "items": { "$ref": "#/$defs/column_entry" },
+          "description": "Columns added to this file, in the order they appear in the new file's CSV header. Each entry includes the column name and its 1-based position in that header."
         },
-        "columns_deleted_list": {
+        "columns_deleted": {
           "type": "array",
-          "items": { "type": "string" },
-          "description": "Column names deleted from this file. The order preserves the same order as the columns appear in the raw CSV of the base file."
+          "items": { "$ref": "#/$defs/column_entry" },
+          "description": "Columns deleted from this file, in the order they appeared in the base file's CSV header. Each entry includes the column name and its 1-based position in that header."
         },
         "row_changes": {
           "type": "object",
-          "required": ["primary_key", "columns_list", "added_list", "deleted_list", "modified_list"],
+          "required": ["primary_key", "columns", "added", "deleted", "modified"],
           "additionalProperties": false,
           "properties": {
             "primary_key": {
@@ -178,22 +194,22 @@
               "minItems": 1,
               "description": "Column(s) that uniquely identify a row."
             },
-            "columns_list": {
+            "columns": {
               "type": "array",
               "items": { "type": "string" },
               "description": "Union of all columns across both base and new versions. Order matches the base feed's original column order; columns only in the new feed are appended."
             },
-            "added_list": {
+            "added": {
               "type": "array",
               "items": { "$ref": "#/$defs/row_added" },
               "description": "Added rows (capped)."
             },
-            "deleted_list": {
+            "deleted": {
               "type": "array",
               "items": { "$ref": "#/$defs/row_deleted" },
               "description": "Deleted rows (capped)."
             },
-            "modified_list": {
+            "modified": {
               "type": "array",
               "items": { "$ref": "#/$defs/row_modified" },
               "description": "Modified rows (capped)."
@@ -231,7 +247,7 @@
         },
         "raw_value": {
           "type": "string",
-          "description": "The CSV row from the new file as a comma-separated string. Field order matches the columns array."
+          "description": "The CSV row from the new file as a comma-separated string. Field order matches the columns array, which preserves the raw CSV column order of the base feed (new-feed-only columns appended)."
         },
         "new_line_number": {
           "type": "integer",
@@ -252,7 +268,7 @@
         },
         "raw_value": {
           "type": "string",
-          "description": "The CSV row from the base file as a comma-separated string. Field order matches the columns array."
+          "description": "The CSV row from the base file as a comma-separated string. Field order matches the columns array, which preserves the raw CSV column order of the base feed (new-feed-only columns appended)."
         },
         "base_line_number": {
           "type": "integer",
@@ -273,7 +289,7 @@
         },
         "raw_value": {
           "type": "string",
-          "description": "The base CSV row as a comma-separated string. Field order matches the columns array."
+          "description": "The base CSV row as a comma-separated string. Field order matches the columns array, which preserves the raw CSV column order of the base feed (new-feed-only columns appended)."
         },
         "base_line_number": {
           "type": "integer",
